@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/enemy_scripts/pathManager.gd" type="Script" id=1]
+[ext_resource path="res://scripts/enemy_scripts/enemy_spawner.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 79.2494, 104.269, 0, 0, 0, 0, 119.431, 997.529, 0, 0, 0, 0, 298.701, 753.351, 0, 0, 0, 0, 462.517, 1232.44, 0, 0, 0, 0, 657.241, 1019.17, 0, 0, 0, 0, 904.51, 988.257, 0, 0, 0, 0, 1077.6, 617.353, 0, 0, 0, 0, 814.875, 329.902, 0, 0, 0, 0, 499.607, 289.721, 0, 0, 0, 0, 363.609, 391.72, 0, 0, 0, 0, 243.065, 274.267, 0, 0, 0, 0, 505.789, 734.806 )
+}
+
+[node name="enemyPath" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="pathManager" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Path2D" type="Path2D" parent="pathManager"]
+curve = SubResource( 1 )
